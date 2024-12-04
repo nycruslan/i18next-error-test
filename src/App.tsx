@@ -16,12 +16,25 @@ const App = () => {
           </li>
         </ul>
       </nav>
-      <ContentProvider>
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/about" element={<AboutPage />} />
-        </Routes>
-      </ContentProvider>
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <ContentProvider defaultNS="1">
+              <HomePage />
+            </ContentProvider>
+          }
+        />
+
+        <Route
+          path="/about"
+          element={
+            <ContentProvider defaultNS="2">
+              <AboutPage />
+            </ContentProvider>
+          }
+        />
+      </Routes>
     </Router>
   );
 };
